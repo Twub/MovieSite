@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+form, .movie-card {
+  padding: 20px;
+  width: 300px;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+.current-rating {
+  margin-left: 30px;
+}
+
+.movie-card {
+  cursor: pointer;
+}
+
+.movie-card h3 {
+  display: inline-block;
+  margin: 0;
+}
+
+.card-rating {
+  float: right;
+}
+
+.card-genre {
+  float: right;
+  margin: 0;
+}
