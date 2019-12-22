@@ -1,6 +1,8 @@
 import Movie from './Movie.js'
+import storage from './Utility/LocalStorage.js';
 
 export default {
+  mixins: [storage],
   template: `
     <div>
       <form>
@@ -39,19 +41,23 @@ export default {
   methods: {
     addMovie(evt) {
       evt.preventDefault()
-
-      let movie = new Movie(
-        this.title, 
-        this.rating,
-        this.genre,
-        this.desc 
-        );
+      if (this.title == ''){
+        alert('Need to add a movie name!!!');
+      }else {
+          let movie = new Movie(
+          this.title, 
+          this.rating,
+          this.genre,
+          this.desc 
+          );
+          this.$emit('newMovie', movie)
+          this.clearForm()
+      }
+      
 
       console.log(movie);
 
-      this.$emit('newMovie', movie)
-
-      this.clearForm()
+      
     },
     clearForm() {
       this.title = ''
