@@ -4,17 +4,20 @@ import storage from './Utility/LocalStorage.js';
 export default {
   mixins: [storage],
   template: `
-    <div>
+    <div id="content-div">
       <form>
         <label for="title">Title</label>
         <input id="title" v-model="title" type="text">
         <br>
+        <br>
+        <span class="current-rating">{{rating}}</span>
         <label for="rating">Rating</label>
         1
         <input id="rating" type="range" v-model="rating" min="1" max="5">
         5
-        <span class="current-rating">{{rating}}</span>
         
+        <br>
+        <br>
         <label for="genre">Genre</label>
         <select id="genre" v-model="genre">
           <option value="Drama">Drama</option>
@@ -22,9 +25,11 @@ export default {
           <option value="Comedy">Comedy</option>
         </select>
         <br>
+        <br>
         <label for="description">Description</label>
         <textarea id="description" v-model="desc"></textarea>
-        
+        <br>
+        <br>
         <button @click.prevent="clearForm">Clear</button>
         <button @click.prevent="addMovie">Add</button>
       </form>

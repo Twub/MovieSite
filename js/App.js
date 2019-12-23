@@ -8,7 +8,7 @@ export default {
   },
   template: `
     <div id="app">
-      <h1>Add Movie</h1>
+      <h1 id="title-header">Add Movie</h1>
       <AddMovie @newMovie="onNewMovie"></AddMovie>
       <br>
       <MovieList :movies="movies" />
